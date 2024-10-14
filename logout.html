@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Halaman Logout dengan Popup</title>
+    <style>
+        /* Animasi untuk keseluruhan body saat halaman dimuat */
+        @keyframes fadeIn {
+            from {
+                opacity: 0;
+            }
+            to {
+                opacity: 1;
+            }
+        }
+
+        body {
+            background: linear-gradient(135deg, #74b6eb, #acb6e5);
+            font-family: 'Poppins', sans-serif;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            margin: 0;
+            animation: fadeIn 2s ease-in-out;
+        }
+
+        /* Kotak tambahan untuk pengalaman organisasi */
+        .extra-box {
+            text-align: center;
+            margin-top: 20px;
+        }
+
+        /* Gaya popup */
+        .popup {
+            display: none; /* Tersembunyi secara default */
+            position: fixed;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            padding: 20px;
+            border-radius: 10px;
+            background-color: white;
+            box-shadow: 0 4px 20px rgba(0, 0, 0, 0.2);
+            z-index: 100;
+        }
+
+        .popup h2 {
+            margin: 0 0 10px;
+        }
+
+        .popup button {
+            margin: 5px;
+            padding: 10px 15px;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            background-color: #2b4057;
+            color: white;
+        }
+
+        .overlay {
+            display: none; /* Tersembunyi secara default */
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-color: rgba(0, 0, 0, 0.5);
+            z-index: 50;
+        }
+
+        .logout-container {
+            text-align: center;
+            padding: 30px;
+            border: 2px solid #2b4057;
+            border-radius: 15px;
+            background: rgba(150, 197, 255, 0.9);
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
+        }
+
+        button {
+            padding: 12px 25px;
+            font-size: 18px;
+            font-weight: bold;
+            background-color: #007bff;
+            color: white;
+            border: none;
+            border-radius: 50px;
+            cursor: pointer;
+        }
+
+        button:hover {
+            background-color: #0056b3;
+        }
+    </style>
+</head>
+<body>
+    <div class="logout-container">
+        <h1>Logout</h1>
+        <p>Anda ingin logout dari akun Anda?</p>
+        <button id="logoutButton">Logout</button> <!-- Tombol untuk memunculkan popup -->
+    </div>
+
+    <div class="overlay" id="overlay"></div> <!-- Overlay untuk popup -->
+    
+    <div class="popup" id="popup">
+        <h2>Konfirmasi Logout</h2>
+        <p>Apakah Anda yakin ingin logout?</p>
+        <button id="confirmLogout">Ya, Logout</button>
+        <button id="cancelLogout">Batal</button>
+    </div>
+
+    <script>
+        // Menampilkan popup
+        document.getElementById('logoutButton').addEventListener('click', function() {
+            document.getElementById('popup').style.display = 'block';
+            document.getElementById('overlay').style.display = 'block';
+        });
+
+        // Mengonfirmasi logout
+        document.getElementById('confirmLogout').addEventListener('click', function() {
+            alert("Anda telah berhasil logout."); // Notifikasi logout berhasil
+            window.location.href = 'login.html'; // Mengarahkan ke halaman login.html
+        });
+
+        // Menutup popup jika dibatalkan
+        document.getElementById('cancelLogout').addEventListener('click', function() {
+            document.getElementById('popup').style.display = 'none';
+            document.getElementById('overlay').style.display = 'none';
+        });
+    </script>
+</body>
+</html>

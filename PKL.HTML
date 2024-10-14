@@ -1,0 +1,1068 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Portfolio PKL</title>
+    <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+    
+<style>
+       body {
+    font-family: 'Poppins', sans-serif;
+    background-color: white;
+    color: #333;
+    padding-top: 50px;
+    scroll-behavior: smooth;
+}
+
+.navbar {
+    background-color: #005082; /* Warna biru yang lebih gelap dan berkelas */
+    padding: 15px;
+}
+
+.navbar-brand {
+    font-size: 28px; /* Ukuran font untuk brand */
+    color: white; /* Warna teks */
+    margin-right: 220px; /* Jarak antara brand dan elemen berikutnya */
+    display: flex; /* Menggunakan flexbox untuk menyelaraskan ikon dan teks */
+    align-items: center; /* Memastikan ikon dan teks berada di tengah secara vertikal */
+    padding-left: 5px;
+}
+
+.navbar-brand i {
+    margin-right: 5px; /* Jarak antara ikon dan teks */
+}
+
+
+/* Jumbotron */
+.jumbotron {
+    background-color: #0077b6; /* Warna biru yang cantik dan elegan */
+    color: black;
+    padding: 60px 20px; /* Padding atas dan bawah */
+    text-align: center;
+    position: relative;
+}
+
+/* Gambar dalam jumbotron */
+.jumbotron img {
+    max-width: 80%; /* Mengatur lebar maksimal gambar */
+    height: auto; /* Menjaga proporsi gambar */
+    border-radius: 10px; /* Sudut melengkung */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); /* Efek bayangan */
+}
+
+/* Judul dalam jumbotron */
+.jumbotron h1 {
+    font-size: 36px; /* Ukuran font untuk judul */
+    font-weight: bold; /* Menebalkan font */
+    margin-bottom: 20px; /* Spasi bawah */
+}
+
+/* Paragraf dalam jumbotron */
+.jumbotron p {
+    font-size: 18px; /* Ukuran font untuk paragraf */
+    margin-top: 10px; /* Spasi atas */
+    line-height: 1.6; /* Jarak antar baris */
+}
+
+/* Responsif untuk perangkat kecil */
+@media (max-width: 768px) {
+    .jumbotron h1 {
+        font-size: 28px; /* Ukuran font lebih kecil di perangkat kecil */
+    }
+
+    .jumbotron p {
+        font-size: 16px; /* Ukuran font lebih kecil untuk paragraf */
+    }
+}
+
+/* Informasi Pribadi */
+#about {
+    background: linear-gradient(135deg,  #0077b6, #8fc3dd,  #0077b6); /* Gradasi biru */
+    color: black; /* Warna teks hitam */
+    padding: 40px 20px; /* Padding atas dan bawah untuk ruang tambahan */
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2); /* Efek bayangan */
+    max-width: 3000px; /* Lebar maksimal untuk kotak */
+    position: relative; /* Agar posisi bisa diatur */
+    top: -50px; /* Mengangkat kotak ke atas */
+}
+
+.icon {
+    font-size: 60px; /* Ukuran ikon */
+    color: #005082; /* Warna ikon biru elegan */
+    margin-bottom: 20px; /* Spasi bawah */
+}
+
+h2 {
+    font-size: 35px; /* Ukuran font untuk judul */
+    color: black;
+    margin-bottom: 20px; /* Spasi bawah */
+    font-weight: bold; /* Menebalkan font */
+}
+
+p {
+    font-size: 18px; /* Ukuran font untuk paragraf */
+    margin: 10px 0; /* Margin atas dan bawah untuk paragraf */
+}
+.link {
+    color: #081f38; /* Warna biru standar (Bootstrap Primary Blue) */
+    text-decoration: none; /* Menghilangkan garis bawah */
+    font-weight: bold; /* Membuat teks lebih tebal */
+}
+
+.link:hover {
+    text-decoration: underline; /* Garis bawah saat hover */
+    color: #081f38; /* Warna biru lebih gelap saat hover */
+}
+
+.whatsapp .link {
+    color: #081f38; /* Warna hijau khas WhatsApp */
+    text-decoration: none; /* Menghilangkan garis bawah */
+    font-weight: bold; /* Membuat teks lebih tebal */
+}
+
+.whatsapp .link:hover {
+    text-decoration: underline; /* Garis bawah saat hover */
+    color: #021959; /* Warna lebih gelap saat hover */
+}
+.email, .github, .whatsapp {
+    margin-top: 10px; /* Spasi atas untuk email dan github */
+}
+.footer {
+    background-color: #005082; /* Warna footer biru berkelas */
+    color: white;
+    padding: 30px 0;
+    text-align: center;
+}
+.footer p {
+    margin: 0;
+}
+
+/* Profil Singkat Styles */
+#profile {
+    background: linear-gradient(135deg,  #00486e, #009deb,  #046295); /* Gradasi biru */
+    color: black; /* Warna teks hitam */
+    padding: 40px 20px; /* Padding atas dan bawah untuk ruang tambahan */
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2); /* Efek bayangan */
+    max-width: 3000px; /* Lebar maksimal untuk kotak */
+    position: relative; /* Agar posisi bisa diatur */
+    top: -50px; /* Mengangkat kotak ke atas */
+    animation: fadeIn 2s ease-in-out; /* Animasi fade-in */
+}
+
+/* Fade-in Animation */
+@keyframes fadeIn {
+    0% {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+    100% {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* Styling untuk gambar PNG memanjang dan melebar */
+.icon1 {
+    width: 200px; /* Lebar yang lebih besar */
+    height: 250px; /* Tinggi yang lebih besar untuk membuat gambar memanjang */
+    margin-right: 100px; /* Memberikan jarak antara gambar dan teks */
+    object-fit: cover; /* Menutupi area secara proporsional */
+    align-self: center; /* Agar gambar selalu berada di tengah secara vertikal */
+    flex-shrink: 0; /* Agar gambar tidak mengecil jika ruang berkurang */
+    border-radius: 10px; /* Menambahkan sudut melengkung (opsional) */
+    transition: transform 0.3s ease, box-shadow 0.3s ease; /* Menambahkan transisi halus */
+}
+
+/* Hover effect untuk gambar */
+.icon1:hover {
+    transform: scale(1.1); /* Memperbesar gambar ketika di-hover */
+    box-shadow: 0 8px 15px rgba(0, 0, 0, 0.3); /* Menambahkan bayangan lebih besar saat hover */
+}
+
+h2 {
+    font-size: 28px; /* Ukuran font untuk judul */
+    color: black; /* Warna judul */
+    margin: 0 0 30px; /* Menambahkan margin bawah untuk memberikan jeda dengan teks lainnya */
+    font-weight: bold; /* Menebalkan font */
+    text-align: center; /* Memusatkan teks ke tengah */
+    animation: slideInLeft 1.5s ease; /* Animasi slide-in dari kiri */
+}
+
+/* Slide-in Animation */
+@keyframes slideInLeft {
+    0% {
+        opacity: 0;
+        transform: translateX(-100%);
+    }
+    100% {
+        opacity: 1;
+        transform: translateX(0);
+    }
+}
+
+p {
+    font-size: 18px; /* Ukuran font untuk paragraf */
+    margin: 10px 0; /* Margin atas dan bawah untuk paragraf */
+    animation: fadeIn 2s ease-in-out; /* Animasi fade-in untuk teks */
+}
+
+
+/* Section Pendidikan */
+#education {
+    background: linear-gradient(135deg,  #0077b6, #8fc3dd,  #0077b6); /* Gradasi biru */
+    color: black; /* Warna teks hitam */
+    padding: 40px 20px; /* Padding atas dan bawah untuk ruang tambahan */
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2); /* Efek bayangan */
+    max-width: 3000px; /* Lebar maksimal untuk kotak */
+    position: relative; /* Agar posisi bisa diatur */
+    top: -50px; /* Mengangkat kotak ke atas */
+}
+
+/* Ikon */
+.icon {
+    font-size: 50px;
+    color: #0050ac; /* Warna ikon */
+    margin-bottom: 20px; /* Spasi di bawah ikon */
+}
+
+/* List Pendidikan */
+ul {
+    list-style-type: none; /* Menghilangkan bullet points */
+    padding: 0; /* Menghilangkan padding */
+    margin: 0; /* Menghilangkan margin */
+}
+
+/* Item dalam list */
+ul li {
+    background: linear-gradient(135deg, #00aaff, #0077b6, #005f8a); /* Gradasi biru menyala */
+    margin: 15px 0; /* Margin antar item */
+    padding: 0.2px; /* Padding dalam item */
+    border-radius: 5px; /* Sudut membulat */
+    display: flex; /* Flexbox untuk menata isi */
+    flex-direction: column; /* Mengatur isi menjadi vertikal */
+    align-items: flex-start; /* Menyelaraskan isi item di kiri */
+    color: #0f0f0f; /* Warna teks hitam */
+}
+
+/* Gambar Pendidikan */
+.education-image {
+    width: 100px; /* Lebar gambar */
+    height: 100px; /* Tinggi gambar */
+    border-radius: 10px; /* Sudut membulat */
+    margin-right: 15px; /* Spasi antara gambar dan teks */
+    object-fit: cover; /* Mengatur ukuran gambar */
+}
+
+/* Judul dan Teks dalam List */
+ul li h4 {
+    margin: 0; /* Menghilangkan margin */
+    font-size: 1.5em; /* Ukuran font untuk judul */
+}
+
+ul li p {
+    margin: 5px 0; /* Margin untuk paragraf */
+}
+
+/* Rank Styling */
+.rank {
+    font-weight: bold; /* Membuat teks lebih tebal */
+    color: #040831; /* Warna untuk peringkat */
+}
+
+/* Clearfix */
+.clearfix {
+    clear: both; /* Mengatasi masalah float */
+}
+
+/* Responsif untuk layar kecil */
+@media (max-width: 768px) {
+    #education {
+        padding: 20px; /* Mengurangi padding */
+    }
+
+    ul li {
+        flex-direction: column; /* Menyusun isi secara vertikal */
+        align-items: flex-start; /* Menyelaraskan teks di kiri */
+    }
+
+    .education-image {
+        margin-bottom: 10px; /* Spasi di bawah gambar */
+    }
+} 
+
+
+/* Section Keahlian */
+#skills {
+    background: linear-gradient(135deg,  #00486e, #009deb,  #046295); /* Gradasi biru */
+    color: black; /* Warna teks hitam */
+    padding: 40px 20px; /* Padding atas dan bawah untuk ruang tambahan */
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2); /* Efek bayangan */
+    max-width: 3000px; /* Lebar maksimal untuk kotak */
+    position: relative; /* Agar posisi bisa diatur */
+    top: -50px; /* Mengangkat kotak ke atas */
+}
+
+/* Ikon */
+.icon {
+    font-size: 50px; /* Ukuran ikon */
+    color: #032130; /* Warna ikon */
+    margin-bottom: 20px; /* Spasi di bawah ikon */
+}
+
+/* Judul Keahlian */
+#skills h2 {
+    font-size: 2.5em; /* Ukuran font untuk judul */
+    color: #0b0b0b; /* Warna judul */
+    margin-bottom: 30px; /* Spasi di bawah judul */
+}
+
+/* List Keahlian */
+ul.list-unstyled {
+    display: inline-block; /* Agar daftar berada di tengah */
+    text-align: left; /* Teks daftar rata kiri */
+    margin-bottom: 30px; /* Jarak antara daftar dan elemen lain */
+}
+
+/* Item List */
+ul.list-unstyled li {
+    background-color: #0077b6; /* Warna latar belakang item */
+    color: white; /* Warna teks putih */
+    border-left: 5px solid #00c9fc; 
+    padding: 12px 20px; /* Padding dalam item */
+    margin: 15px 0; /* Spasi antar item */
+    border-radius: 5px; /* Sudut item membulat */
+    font-size: 1.2em; /* Ukuran teks item */
+    transition: background-color 0.3s ease; /* Transisi warna saat hover */
+}
+
+/* Efek hover untuk list item */
+ul.list-unstyled li:hover {
+    background-color: #005f8a; /* Warna saat hover */
+}
+
+/* Responsif untuk layar kecil */
+@media (max-width: 768px) {
+    #skills h2 {
+        font-size: 2em; /* Ukuran font judul lebih kecil di layar kecil */
+    }
+
+    ul.list-unstyled li {
+        font-size: 1em; /* Ukuran teks lebih kecil di layar kecil */
+        margin: 10px 0; /* Spasi lebih kecil di layar kecil */
+    }
+}
+
+
+/* Gaya Umum untuk Bagian Proyek */
+#projects {
+    background: linear-gradient(135deg,  #0077b6, #8fc3dd,  #0077b6); /* Gradasi biru */
+    color: black; /* Warna teks hitam */
+    padding: 40px 20px; /* Padding atas dan bawah untuk ruang tambahan */
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2); /* Efek bayangan */
+    max-width: 3000px; /* Lebar maksimal untuk kotak */
+    position: relative; /* Agar posisi bisa diatur */
+    top: -50px; /* Mengangkat kotak ke atas */
+}
+
+.icon {
+    font-size: 40px; /* Ukuran ikon */
+    color: #022952; /* Warna ikon */
+    margin-bottom: 20px; /* Jarak bawah ikon */
+}
+
+h2 {
+    font-family: 'Arial', sans-serif; /* Font untuk judul */
+    font-size: 36px; /* Ukuran font judul */
+    margin-bottom: 30px; /* Jarak bawah judul */
+}
+
+/* Gaya untuk Kartu Proyek */
+.card {
+    margin: 20px 0; /* Jarak antara kartu */
+    border: none; /* Menghilangkan border */
+    border-radius: 10px; /* Sudut melengkung */
+    background: linear-gradient(135deg,  #00486e, #009deb,  #046295); /* Gradasi biru */
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1); /* Bayangan untuk kartu */
+    transition: transform 0.3s; /* Efek transisi saat hover */
+}
+
+.card:hover {
+    transform: translateY(-5px); /* Mengangkat kartu saat hover */
+}
+
+/* Gaya untuk Judul Kartu */
+.card-title {
+    font-size: 24px; /* Ukuran font judul proyek */
+    font-weight: bold; /* Menebalkan font */
+    margin-bottom: 15px; /* Jarak bawah judul */
+    color: transparent; /* Warna font judul awal */
+    background: linear-gradient(90deg, #000000, #434343); /* Gradasi hitam */
+    -webkit-background-clip: text; /* Memotong latar belakang menjadi teks */
+    background-clip: text; /* Memotong latar belakang menjadi teks */
+}
+
+/* Gaya untuk Teks Deskripsi */
+.card-text {
+    font-size: 16px; /* Ukuran font deskripsi */
+    color: transparent; /* Warna font deskripsi awal */
+    background: linear-gradient(90deg, #FFD700, #646139, #FFF700, #41361a); /* Gradasi emas ke warna terang */
+    -webkit-background-clip: text; /* Memotong latar belakang menjadi teks */
+    background-clip: text; /* Memotong latar belakang menjadi teks */
+    margin-top: 10px; /* Jarak atas deskripsi */
+}
+
+
+/* Gaya untuk Galeri Gambar */
+.image-gallery {
+    display: flex; /* Mengatur gambar dalam satu baris */
+    flex-wrap: wrap; /* Membungkus gambar ke baris berikutnya */
+    justify-content: center; /* Meratakan gambar di tengah */
+}
+
+.image-gallery img {
+    width: 100%; /* Mengatur lebar gambar */
+    max-width: 120px; /* Ukuran maksimum gambar */
+    height: auto; /* Mempertahankan rasio gambar */
+    margin: 5px; /* Jarak antar gambar */
+    border-radius: 5px; /* Sudut melengkung pada gambar */
+    transition: transform 0.2s; /* Efek transisi saat hover pada gambar */
+}
+
+.image-gallery img:hover {
+    transform: scale(1.1); /* Efek zoom saat hover pada gambar */
+}
+
+/* Styling untuk Section Tujuan PKL */
+#goals {
+    background: linear-gradient(135deg,  #00486e, #009deb,  #046295); /* Gradasi biru */
+    color: black; /* Warna teks hitam */
+    padding: 40px 20px; /* Padding atas dan bawah untuk ruang tambahan */
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2); /* Efek bayangan */
+    max-width: 3000px; /* Lebar maksimal untuk kotak */
+    position: relative; /* Agar posisi bisa diatur */
+    top: -50px; /* Mengangkat kotak ke atas */
+}
+
+.icon {
+    font-size: 60px; /* Ukuran ikon */
+    margin-bottom: 20px; /* Spasi di bawah ikon */
+    color: #061292; /* Warna emas untuk ikon */
+}
+
+h2 {
+    font-size: 2.5em; /* Ukuran font untuk judul */
+    margin-bottom: 20px; /* Margin di bawah judul */
+    text-shadow: 1px 1px 5px rgba(0, 0, 0, 0.3); /* Efek bayangan pada teks */
+}
+
+.goals-description {
+    font-size: 1.2em; /* Ukuran font untuk deskripsi */
+    margin: 15px 0; /* Margin atas dan bawah untuk paragraf */
+    line-height: 1.5; /* Jarak antar baris */
+    max-width: 800px; /* Lebar maksimum untuk paragraf */
+    margin-left: auto; /* Untuk sentralkan */
+    margin-right: auto; /* Untuk sentralkan */
+    padding: 10px; /* Padding dalam paragraf */
+    background: linear-gradient(135deg, rgba(7, 102, 134, 0.8), rgba(255, 215, 0, 0.8)); /* Gradasi biru ke emas */
+    border-radius: 5px; /* Sudut membulat */
+    color: white; /* Warna teks putih */
+    text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.3); /* Efek bayangan pada teks */
+}
+/* Responsif untuk layar kecil */
+@media (max-width: 768px) {
+    h2 {
+        font-size: 2em; /* Ukuran font lebih kecil untuk judul */
+    }
+    .goals-description {
+        font-size: 1em; /* Ukuran font lebih kecil untuk deskripsi */
+    }
+}
+
+
+#experience {
+    background: linear-gradient(135deg,  #0077b6, #8fc3dd,  #0077b6); /* Gradasi biru */
+    color: black; /* Warna teks hitam */
+    padding: 40px 20px; /* Padding atas dan bawah untuk ruang tambahan */
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2); /* Efek bayangan */
+    max-width: 3000px; /* Lebar maksimal untuk kotak */
+    position: relative; /* Agar posisi bisa diatur */
+    top: -50px; /* Mengangkat kotak ke atas */
+}
+
+.extra-box {
+    background: linear-gradient(135deg, #0077b6, #8fc3dd, #0077b6); /* Gradasi biru */
+    padding: 50px 20px; /* Padding untuk ruang tambahan */
+    color: black; /* Warna teks */
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2); /* Efek bayangan */
+    margin-top: -50px; /* Mengangkat kotak ke atas dengan nilai negatif */
+    height: 300px; /* Tinggi kotak, sesuaikan dengan kebutuhan */
+    display: flex; /* Menggunakan flexbox untuk pemusatan */
+    flex-direction: column; /* Mengatur arah flex menjadi kolom */
+    justify-content: center; /* Memusatkan konten secara vertikal */
+    align-items: center; /* Memusatkan konten secara horizontal */
+    text-align: center; /* Teks di tengah */
+    border: 2px solid #005f8a; /* Garis tepi dengan warna biru gelap */
+    border-radius: 1.5px; /* Sudut membulat */
+}
+
+
+.icon {
+    font-size: 50px; /* Ukuran ikon */
+    color: #02015b; /* Warna emas untuk ikon */
+    margin-bottom: 20px; /* Spasi di bawah ikon */
+}
+
+h2 {
+    color: #000000; /* Warna teks judul */
+    font-weight: bold; /* Tebal untuk judul */
+}
+
+.experience-item {
+    display: flex; /* Menggunakan flexbox untuk tata letak */
+    align-items: center; /* Menyelaraskan isi di tengah */
+    margin: 20px 0; /* Margin antar item */
+    padding: 10px; /* Padding dalam item */
+    background: rgba(173, 216, 230, 0.8); /* Latar belakang biru muda transparan */
+    border-radius: 8px; /* Sudut membulat */
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2); /* Efek bayangan item */
+}
+
+.experience-image {
+    width: 80px; /* Lebar gambar */
+    height: 80px; /* Tinggi gambar */
+    border-radius: 50%; /* Membuat gambar bulat */
+    margin-right: 15px; /* Spasi antara gambar dan teks */
+    object-fit: cover; /* Mengatur ukuran gambar */
+}
+
+.experience-details h4 {
+    margin: 0; /* Menghilangkan margin */
+    color: #161515; /* Warna teks untuk nama organisasi */
+}
+
+.experience-details p {
+    margin: 5px 0; /* Margin untuk tahun */
+    color: rgb(4, 83, 86);
+    font-weight: bold; /* Membuat teks menjadi tebal */
+    font-size: 0.8em; /* Menambah ukuran font sedikit */
+}
+
+/* CSS untuk tombol logout */
+.btn-danger {
+    background: linear-gradient(135deg, #00aaff, #0077b6, #005f8a); /* Gradasi biru menyala */
+    margin: 15px 0; /* Margin antar item */
+    padding: 11px; /* Padding dalam item */
+    border-radius: 5px; /* Sudut membulat */
+    display: flex; /* Flexbox untuk menata isi */
+    flex-direction: column; /* Mengatur isi menjadi vertikal */
+    align-items: flex-start; /* Menyelaraskan isi item di kiri */
+    color: #e2d0d0; /* Warna perak yang elegan */
+    text-decoration: none; /* Menghilangkan garis bawah/link */
+    border: none; /* Menghilangkan border tombol */
+    outline: none; /* Menghilangkan outline saat tombol aktif atau di-klik */
+    transition: background 0.3s ease, transform 0.2s ease; /* Transisi untuk background dan transform */
+}
+
+/* Efek hover */
+.btn-danger:hover {
+    background-color: #c82333; /* Warna merah lebih gelap saat di-hover */
+    box-shadow: 0 6px 20px rgba(0, 0, 0, 0.3); /* Efek bayangan lebih besar */
+    transform: scale(1.05); /* Membesarkan tombol saat hover */
+}
+
+/* Pseudo-element untuk efek menyala */
+.btn-danger::before {
+    content: ''; /* Membuat konten kosong */
+    position: absolute; /* Posisi absolut */
+    top: 0;
+    left: 50%; /* Tengah horizontal */
+    width: 200%; /* Lebar untuk efek menyala */
+    height: 100%; /* Tinggi sama dengan tautan */
+    background: rgba(255, 255, 255, 0.2); /* Warna latar belakang efek menyala */
+    transform: translateX(-50%) translateY(0) scale(0); /* Mulai dari skala 0 */
+    transition: transform 0.5s ease; /* Transisi efek menyala */
+    border-radius: 5px; /* Sudut membulat */
+}
+
+/* Saat hover, memperbesar pseudo-element */
+.btn-danger:hover::before {
+    transform: translateX(-50%) scale(1); /* Membesarkan efek */
+}
+
+/* Responsive untuk layar kecil */
+@media (max-width: 576px) {
+    .btn-danger {
+        width: 100%; /* Tombol akan penuh lebar pada layar kecil */
+        padding: 12px 0; /* Padding untuk ukuran layar kecil */
+    }
+}
+
+/* Warna spesifik untuk Home */
+.navbar-nav .nav-link[href="#home"] {
+    color: #6ab04c !important; /* Hijau lembut untuk Home */
+}
+
+/* Warna spesifik untuk Informasi Pribadi (About) */
+.navbar-nav .nav-link[href="#about"] {
+    color: #ff6f91 !important; /* Pink lembut untuk About */
+}
+
+/* Warna untuk Profil Singkat */
+.navbar-nav .nav-link[href="#profile"] {
+    color: #ffe4b5; /* Warna peach lembut */
+}
+
+/* Warna untuk Pendidikan */
+.navbar-nav .nav-link[href="#education"] {
+    color: #d5b8d1; /* Warna lavender pastel untuk Pendidikan */
+}
+
+/* Warna untuk Keahlian */
+.navbar-nav .nav-link[href="#skills"] {
+    color: #b2e0d2; /* Warna hijau mint lembut untuk Keahlian */
+}
+
+/* Warna untuk Proyek */
+.navbar-nav .nav-link[href="#projects"] {
+    color: #b19cd9; /* Warna ungu pastel untuk Proyek */
+}
+
+/* Warna untuk Tujuan PKL */
+.navbar-nav .nav-link[href="#goals"] {
+    color: #f9e79f; /* Warna kuning pastel untuk Tujuan PKL */
+}
+
+/* Warna untuk Pengalaman Organisasi */
+.navbar-nav .nav-link[href="#experience"] {
+    color: #f7c6c7; /* Merah muda lembut untuk Pengalaman Organisasi */
+} 
+
+
+/* Efek hover untuk semua tautan navbar */
+.navbar-nav .nav-link {
+    position: relative; /* Agar pseudo-element bisa diposisikan relatif terhadap tautan */
+    overflow: hidden; /* Menghindari elemen yang melampaui batas */
+    transition: color 0.3s ease; /* Transisi warna teks */
+}
+
+/* Efek saat hover */
+.navbar-nav .nav-link:hover {
+    transform: scale(1.1); /* Membesarkan sedikit saat hover */
+    text-shadow: 0 0 10px rgba(255, 255, 255, 0.5); /* Menambahkan bayangan teks */
+    color: #ffffff; /* Ubah warna teks saat hover */
+}
+
+/* Pseudo-element untuk efek menyala */
+.navbar-nav .nav-link::before {
+    content: ''; /* Membuat konten kosong */
+    position: absolute; /* Posisi absolut */
+    top: 0;
+    left: 50%; /* Tengah horizontal */
+    width: 200%; /* Lebar untuk efek menyala */
+    height: 100%; /* Tinggi sama dengan tautan */
+    background: rgba(255, 255, 255, 0.2); /* Warna latar belakang efek menyala */
+    transform: translateX(-50%) translateY(0) scale(0); /* Mulai dari skala 0 */
+    transition: transform 0.5s ease; /* Transisi efek menyala */
+    border-radius: 5px; /* Sudut membulat */
+}
+
+/* Saat hover, memperbesar pseudo-element */
+.navbar-nav .nav-link:hover::before {
+    transform: translateX(-50%) translateY(0) scale(1); /* Membesarkan efek */
+}
+
+</style>
+
+</head>
+<body>
+<!-- Navbar -->
+<nav class="navbar navbar-expand-lg navbar-dark fixed-top">
+    <div class="container">
+        <a class="navbar-brand" href="#">
+            <img src="logosekolah.png" alt="Logo" style="width: 30px; height: 30px; margin-right: 8px;">
+            Portfolio PKL
+        </a>         
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarNav">
+            <ul class="navbar-nav ml-auto">
+                <li class="nav-item active">
+                    <a class="nav-link" href="#home"><i class="fas fa-home"></i> Home</a>
+                </li>                
+                <li class="nav-item active">
+                    <a class="nav-link" href="#about"><i class="fas fa-user"></i> Informasi Pribadi</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="#profile"><i class="fas fa-user"></i> Profil Singkat</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="#education"><i class="fas fa-graduation-cap"></i> Pendidikan</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="#skills"><i class="fas fa-cogs"></i> Keahlian</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="#projects"><i class="fas fa-briefcase"></i> Proyek</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="#goals"><i class="fas fa-bullseye"></i> Tujuan PKL</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="#experience"><i class="fas fa-users"></i> Pengalaman Organisasi</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="#lessons"><i class="fas fa-lightbulb"></i> Pelajaran Berharga</a>
+                </li>
+                <a href="logout.html" class="btn btn-danger">
+                    <i class="fas fa-sign-out-alt"></i> Exit
+                </a>                
+            </ul>
+        </div>
+    </div>
+</nav>
+
+<!-- Jumbotron -->
+<div class="jumbotron">
+    <div id="home" class="jumbotron"></div>
+    <div class="container text-center">
+        <h1>Selamat Datang di Portfolio PKL Anjely</h1>
+        <img src="welcome1.png" alt="Selamat Datang" class="img-fluid mb-4" style="max-width: 80%; height: auto;">
+        <p>Dengan semangat yang menggebu, bersiap untuk memasuki dunia industri melalui Praktik Kerja Lapangan (PKL). Bersama pengalaman dan pengetahuan yang telah dikumpulkan, siap untuk memberikan kontribusi nyata dan menjelajahi potensi tanpa batas.</p>
+    </div>
+</div>
+
+<section id="about">
+    <div class="container text-center">
+        <i class="fas fa-user icon"></i>
+        <h2>Informasi Pribadi</h2>
+        <p>Anjely Raysya Callaluna Hanum</p>
+        <p>Jl.Bintara 14 RT.007/RW.009 BEKASI BARAT,KOTA BEKASI,JAWA BARAT,BINTARA 17134</p>
+        <!-- Email -->
+    <p class="email">
+        <i class="fas fa-envelope"></i> 
+        Email: <a href="anjelyhanum@gmail.com" class="link">anjelyhanum@gmail.com</a>
+    </p>
+    
+    <!-- GitHub -->
+    <p class="github">
+        <i class="fab fa-github"></i> 
+        GitHub: <a href="https://github.com/anjelyraysya" class="link">https://github.com/anjelyraysya</a>
+    </p>
+    
+   <!-- WhatsApp -->
+<p class="whatsapp">
+    <i class="fab fa-whatsapp"></i> 
+    WhatsApp: <a href="https://wa.me/6285888761597" class="link">Contact Me</a>
+</p>
+
+    </p>
+</body>
+    </div>
+</section>
+
+<!-- Profil Singkat -->
+<section id="profile" class="py-5">
+    <div class="container">
+        <div class="d-flex align-items-start"> <!-- Menambahkan flexbox di sini -->
+            <img src="fotome.jpeg" alt="Profil Icon" class="icon1"> <!-- Ganti ikon dengan gambar PNG -->
+            <div>
+            <div>
+                <h2>Profil Singkat</h2>
+                <p>Siswa SMKN 1 KOTA BEKASI jurusan Pengembangan Perangkat Lunak dan Gim (PPLG), memiliki dedikasi dan semangat tinggi dalam pengembangan perangkat lunak. Keahlian dalam desain antarmuka pengguna (UI/UX) dan pengembangan aplikasi web sekaligus pengembangan game yang menciptakan solusi inovatif dan efektif. Setiap proyek dianggap sebagai kesempatan untuk mengaplikasikan kreativitas dan keterampilan teknis dalam merancang antarmuka yang mudah digunakan dan aplikasi yang memenuhi kebutuhan pengguna dengan hasil memuaskan.Selalu berusaha memberikan yang terbaik, baik secara individu maupun dalam tim, dengan antusiasme yang terus menerus untuk belajar dan beradaptasi dengan teknologi terbaru. Memiliki tekad untuk mengasah keterampilan dan memanfaatkan setiap kesempatan sebagai langkah menuju pencapaian yang lebih tinggi. Keberhasilan dalam proyek-proyek sebelumnya memotivasi untuk menghadapi tantangan lebih besar di masa depan, dengan setiap pengalaman dipandang sebagai peluang untuk berinovasi dan berkomitmen menghasilkan proyek berkualitas tinggi yang berdampak dan bernilai tambah.</p>
+            </div>
+        </div>
+    </div>
+</section>
+
+
+<!-- Pendidikan -->
+<section id="education" class="py-5">
+    <div class="container text-center">
+        <i class="fas fa-graduation-cap icon"></i>
+        <h2>Pendidikan</h2>
+        <ul class="list-unstyled">
+            <!-- SD -->
+            <li>
+                <img src="sd.jpeg" alt="Foto SD" class="education-image">
+                <h4>SDN 6 Bintara</h4>
+                <p>Tahun Masuk : 2013</p>
+                <p>Tahun Lulus : 2019</p>
+                <p>Peringkat Kelas : <span class="rank">2 dari 30 siswa</span></p>
+                <div class="clearfix"></div>
+            </li>
+            <!-- SMP -->
+            <li>
+                <img src="smp.jpeg" alt="Foto SMP" class="education-image">
+                <h4>SMPN 14 Bekasi</h4>
+                <p>Tahun Masuk : 2019</p>
+                <p>Tahun Lulus : 2022</p>
+                <p>Peringkat Kelas : <span class="rank">2 dari 32 siswa</span></p>
+                <p>Kejuaraan : <span class="rank">Juara 3 Lomba Dongeng Bulan Bahasa Di SMPN 14 Bekasi</span></p>
+                <p>Kejuaraan : <span class="rank">Juara Terbaik Lomba Puisi Mental Health Di SMPN 14 Bekasi</span></p>
+                <div class="clearfix"></div>
+            </li>
+            <!-- SMK -->
+            <li>
+                <img src="smk.jpeg" alt="Foto SMK" class="education-image">
+                <h4>SMKN 1 Kota Bekasi - Jurusan PPLG</h4>
+                <p>Tahun Masuk : 2022</p>
+                <p>Tahun Lulus : 2025</p>
+                <p>Peringkat Kelas : <span class="rank">4 dari 35 siswa</span></p>
+                <div class="clearfix"></div>
+            </li>            
+        </ul>
+    </div>
+</section>
+
+<!-- Keahlian -->
+<section id="skills" class="py-5 bg-light">
+    <div class="container text-center">
+        <i class="fas fa-cogs icon"></i>
+        <h2>Keahlian</h2>
+        
+        <!-- Bahasa Pemrograman dan Alat Desain -->
+<div class="skills-category">
+    <h3>Bahasa Pemrograman dan Alat Desain</h3>
+    <ul class="list-unstyled">
+        <li>HTML, CSS, JavaScript</li>
+        <li>PHP, C, C++, C#, Laravel, Figma</li> 
+    </ul>
+</div>
+
+</section>
+
+<!-- Proyek -->
+<section id="projects" class="py-5">
+    <div class="container text-center">
+        <i class="fas fa-briefcase icon"></i>
+        <h2>Proyek</h2>
+        <div class="row">
+                 <!-- Proyek 1 -->
+               <div class="col-md-4">
+               <div class="card">
+               <h5 class="card-title">Aplikasi Kalkulator Sederhana</h5>
+               <div class="card-body">
+               <div class="image-gallery">
+               <img src="kalkulatoranjely.jpeg" alt="Gambar Proyek 1">
+               </div>
+               <p class="card-date">Tanggal Pembuatan: 30 November 2022</p>
+               <p class="card-text">Sebuah aplikasi kalkulator interaktif yang dirancang untuk memudahkan pengguna dalam menghitung transaksi kuliner dengan cepat dan akurat. Warna ungu melambangkan kreativitas, spiritualitas, dan kemewahan, memberikan kesan misterius dan elegan, serta sering digunakan untuk menciptakan suasana yang menenangkan dan inspiratif.</p>
+            </div>
+        </div>
+    </div>
+
+                          <!-- Proyek 2 -->
+<div class="col-md-4">
+    <div class="card">
+        <h5 class="card-title">Game Alice 3D [Sekolah Alice: Petualangan Dua Sahabat]</h5>
+        <div class="card-body">
+            <div class="image-gallery">
+                <img src="alice.jpeg" alt="Gambar Proyek 4">
+            </div>
+            <p class="card-date">Tanggal Pembuatan: 19 - 20 Januari 2023</p>
+            <p class="card-text">Game 3D interaktif berbasis Alice yang menawarkan pengalaman seru dan mendidik. Pemain menjelajahi dunia berwarna dengan rekaman kamera, menikmati percakapan antar karakter, dan menghadapi berbagai tantangan kreatif untuk melatih kemampuan berpikir.</p>
+        </div>
+    </div>
+</div>
+
+
+
+                <!-- Proyek 3 -->
+                <div class="col-md-4">
+                    <div class="card">
+                    <h5 class="card-title">Game Greenfoot 2D [Lompatan Luminescent: Kumbang dan Katak]</h5>
+                    <div class="card-body">
+                    <div class="image-gallery">
+                    <img src="level1.jpg" alt="Gambar Proyek 3">
+                    <img src="level2.jpg" alt="Gambar Proyek 3">
+                    <img src="level3.jpg" alt="Gambar Proyek 3">
+                    </div>
+                    <p class="card-date">Tanggal Pembuatan: 1 Februari 2023</p>
+                    <p class="card-text">Game interaktif berbasis Greenfoot dengan tiga level tantangan. Pemain mengatasi rintangan dan menyelesaikan misi untuk menang, dilengkapi efek suara yang meningkatkan keseruan dan menciptakan pengalaman yang tak terlupakan.</p>
+                 </div>
+             </div>
+         </div>
+
+          <!-- Proyek 4 -->
+<div class="col-md-4">
+    <div class="card">
+        <h5 class="card-title">Penjualan</h5>
+        <div class="card-body">
+            <div class="image-gallery">
+                <img src="penjualan1.jpg" alt="Gambar Proyek 4">
+                <img src="penjualan2.jpg" alt="Gambar Proyek 4">
+            </div>
+            <p class="card-date">Tanggal Pembuatan: 18 Februari - 18 Maret 2023</p>
+            <p class="card-text">Aplikasi penjualan berbasis Laravel ini dirancang dengan antarmuka yang intuitif, memudahkan pengelolaan data penjualan dan laporan secara efisien. Dibangun untuk memaksimalkan produktivitas dan akurasi dalam setiap transaksi.</p>
+        </div>
+    </div>
+</div>
+
+               <!-- Proyek 5 -->
+               <div class="col-md-4">
+               <div class="card">
+               <h5 class="card-title">Game Scracth 2D [Tikus vs. Kucing: Pertarungan Makanan]</h5>
+               <div class="card-body">
+               <div class="image-gallery">
+               <img src="gamescracth.jpeg" alt="Gambar Proyek 5">
+               </div>
+               <p class="card-date">Tanggal Pembuatan: 22 Juni 2023</p>
+               <p class="card-text">Game 2D interaktif yang dibuat dengan Scratch, menawarkan pengalaman bermain seru dan mendidik. Pemain menghadapi tantangan kreatif yang mengasah kemampuan berpikir dan strategi, dengan grafis cerah dan desain menarik.</p>
+            </div>
+        </div>
+    </div>
+
+              <!-- Proyek 6 -->
+<div class="col-md-4">
+    <div class="card">
+        <h5 class="card-title">Kalkulator Perencanaan Perjalanan</h5>
+        <div class="card-body">
+            <div class="image-gallery">
+                <img src="kalkulator2.jpeg" alt="Gambar Proyek 6">
+            </div>
+            <p class="card-date">Tanggal Pembuatan: 12 Oktober 2023</p>
+            <p class="card-text">Aplikasi ini menghitung waktu tempuh berdasarkan jarak dan kecepatan. Dengan antarmuka yang mudah digunakan, kalkulator ini membantu pengguna merencanakan perjalanan secara efisien.</p>
+        </div>
+    </div>
+</div>
+
+
+           <!-- Proyek 7 -->
+<div class="col-md-4">
+    <div class="card">
+        <h5 class="card-title">Undangan Tasyakuran Aqiqah</h5>
+        <div class="card-body">
+            <div class="image-gallery">
+                <img src="undanganaqiqah1.jpeg" alt="Gambar Proyek 7">
+                <img src="undanganaqiqah2.jpeg" alt="Gambar Proyek 7">
+                <img src="undanganaqiqah3.jpeg" alt="Gambar Proyek 7">
+                <img src="undanganaqiqah4.jpeg" alt="Gambar Proyek 7">
+                <img src="undanganaqiqah5.jpeg" alt="Gambar Proyek 7">
+                <img src="undanganaqiqah6.jpeg" alt="Gambar Proyek 7">
+                <img src="undanganaqiqah7.jpeg" alt="Gambar Proyek 7">
+            </div>
+            <p class="card-date">Tanggal Pembuatan: 7 Mei - 17 Juni 2024</p>
+            <p class="card-text">Aplikasi undangan tasyakuran aqiqah ini dirancang dengan estetika yang memikat dan penuh makna. Setiap detail mencerminkan sukacita acara, menciptakan kesan mendalam bagi tamu yang diundang, serta dilengkapi dengan fitur inovatif untuk membantu pelanggan merencanakan momen berharga mereka.</p>
+        </div>
+    </div>
+</div>
+
+                   <!-- Proyek 8 -->
+<div class="col-md-4">
+    <div class="card">
+        <h5 class="card-title">Restoran Rumah Makan</h5>
+        <div class="card-body">
+            <div class="image-gallery">
+                <img src="restoran1.jpeg" alt="Gambar Proyek 8">
+                <img src="restoran2.jpeg" alt="Gambar Proyek 8">
+                <img src="restoran3.jpeg" alt="Gambar Proyek 8">
+                <img src="restoran4.jpeg" alt="Gambar Proyek 8">
+                <img src="restoran5.jpeg" alt="Gambar Proyek 8">
+                <img src="restoran6.jpeg" alt="Gambar Proyek 8">
+                <img src="restoran7.jpeg" alt="Gambar Proyek 8">
+                <img src="restoran8.jpeg" alt="Gambar Proyek 8">
+                <img src="restoran9.jpeg" alt="Gambar Proyek 8">
+            </div>
+            <p class="card-date">Tanggal Pembuatan: 25 Juli - 8 Agustus 2024</p>
+            <p class="card-text">Aplikasi website restoran ini menawarkan pengalaman kuliner yang tak terlupakan dengan desain yang elegan dan fungsional. Setiap elemen dirancang untuk menciptakan atmosfer yang hangat dan ramah, lengkap dengan fitur interaktif yang memudahkan pelanggan dalam menjelajahi menu, membuat reservasi, dan menikmati layanan cepat yang membuat setiap kunjungan menjadi istimewa.</p>
+        </div>
+    </div>
+</div>
+
+           
+             
+</section>
+
+
+<!-- Tujuan PKL -->
+<section id="goals" class="py-5 bg-light">
+    <div class="container text-center">
+        <i class="fas fa-bullseye icon"></i>
+        <h2>Tujuan PKL</h2>
+        <p class="goals-description">"Tujuan dari Praktik Kerja Lapangan ini adalah untuk mengasah keterampilan dan mendapatkan pengalaman berharga di dunia kerja."</p>
+        <p class="goals-description">"Ingin belajar dari setiap kesempatan yang ada, dan berkontribusi sebaik mungkin untuk masa depan yang lebih baik."</p>
+        <p class="goals-description">"Setiap pengalaman adalah pelajaran berharga yang membawa kita lebih dekat ke tujuan."</p>
+        <p class="goals-description">"Kesuksesan tidak datang dari apa yang kita lakukan sesekali, tetapi dari apa yang kita lakukan secara konsisten."</p>
+        <p class="goals-description">"Dengan usaha dan dedikasi, tidak ada yang tidak mungkin untuk dicapai."</p>
+        <p class="goals-description">"Langkah pertama menuju kesuksesan adalah keyakinan bahwa bisa melakukannya."</p>
+        <p class="goals-description">"Di balik setiap tantangan, terdapat peluang untuk berkembang dan bersinar."</p>
+    </div>
+</section>
+
+
+<!-- Pengalaman Organisasi -->
+<section id="experience" class="py-5">
+    <div class="container text-center">
+        <i class="fas fa-users icon"></i>
+        <h2>Pengalaman Organisasi</h2>
+        <ul class="list-unstyled">
+            <li>
+                <div class="experience-item">
+                    <img src="ops.jpeg" alt="Anggota OPS" class="experience-image">
+                    <div class="experience-details">
+                        <h4>Anggota OPS [Organisasi Perpustakaan Sekolah]</h4>
+                        <p>[20 Agustus 2022-12 Februari 2024]</p>
+                        <p>Div.Pembekuan</p>
+                        <p>Tugasnya: Mengorganisir dan mengelola data perpustakaan, serta meningkatkan efisiensi dalam pencarian informasi.</p>
+                        <p>"Membaca adalah jendela dunia. Dengan pengetahuan, kita membangun masa depan yang lebih baik."</p>
+                    </div>
+                </div>
+            </li>
+            <li>
+                <div class="experience-item">
+                    <img src="panitia.jpeg" alt="Panitia Sandya Buddhayah" class="experience-image">
+                    <div class="experience-details">
+                        <h4>Panitia Sandya Buddhayah [Bulan Bahasa]</h4>
+                        <p>[27 Oktober 2023]</p>
+                        <p>Sie.Sponsor</p>
+                        <p>Tugasnya: Menjalin kemitraan dengan sponsor untuk mendukung kegiatan, serta memastikan semua kebutuhan terpenuhi.</p>
+                        <p>"Bersama kita bisa, dan dengan kolaborasi kita akan menciptakan dampak yang lebih besar."</p>
+                    </div>
+                </div>
+            </li>
+        </ul>
+    </div>
+</section>
+
+ 
+<!-- Bagian Konten Pelajaran Berharga -->
+<div id="lessons" class="extra-box">
+    <i class="fas fa-lightbulb icon"></i>
+    <h3>Pelajaran Berharga dari Pengalaman Organisasi</h3>
+    <ul id="lessonsList"> <!-- Tidak ada lagi display: none -->
+        <li>"Pengalaman organisasi saya mengajarkan nilai inisiatif dan kerja sama yang penting untuk lingkungan kerja ini."</li>
+        <li>"Tantangan yang saya hadapi telah membekali saya untuk beradaptasi dan berinovasi dalam situasi baru."</li>
+        <li>"Saya berkomitmen untuk menerapkan pelajaran dari pengalaman organisasi demi kontribusi positif selama PKL."</li>
+    </ul>
+</div>
+
+
+
+<!-- Footer -->
+<footer class="footer">
+    <p>&copy; 2024 Portfolio Anjely. All rights reserved.</p>
+</footer>
+
+<script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.5.2/dist/umd/popper.min.js"></script>
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+
+<!-- JavaScript -->
+<script>
+    // Smooth scrolling to sections
+    document.querySelectorAll('a.nav-link').forEach(anchor => {
+        anchor.addEventListener('click', function(e) {
+            e.preventDefault();
+            document.querySelector(this.getAttribute('href')).scrollIntoView({
+                behavior: 'smooth'
+            });
+        });
+    });
+
+</script>
+
+</body>
+</html>

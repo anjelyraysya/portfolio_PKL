@@ -1,0 +1,285 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Portfolio PKL</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f4f4f4;
+        }
+
+        header {
+            background: #4CAF50;
+            color: white;
+            padding: 10px 0;
+            text-align: center;
+        }
+
+        nav ul {
+            list-style-type: none;
+            padding: 0;
+        }
+
+        nav ul li {
+            display: inline;
+            margin: 0 15px;
+        }
+
+        nav ul li a {
+            color: white;
+            text-decoration: none;
+            transition: color 0.3s;
+        }
+
+        nav ul li a:hover {
+            color: #d1e7dd;
+        }
+
+        
+        footer {
+            text-align: center;
+            padding: 10px 0;
+            background: #4CAF50;
+            color: white;
+            position: relative;
+            bottom: 0;
+            width: 100%;
+        }
+        .icon {
+            font-size: 24px;
+            margin-right: 8px;
+        }
+        /* Jumbotron */
+.jumbotron {
+    background-color: #0077b6; /* Warna biru yang cantik dan elegan */
+    color: black;
+    padding: 60px 20px; /* Padding atas dan bawah */
+    text-align: center;
+    position: relative;
+}
+
+/* Gambar dalam jumbotron */
+.jumbotron img {
+    max-width: 80%; /* Mengatur lebar maksimal gambar */
+    height: auto; /* Menjaga proporsi gambar */
+    border-radius: 10px; /* Sudut melengkung */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); /* Efek bayangan */
+}
+
+/* Judul dalam jumbotron */
+.jumbotron h1 {
+    font-size: 36px; /* Ukuran font untuk judul */
+    font-weight: bold; /* Menebalkan font */
+    margin-bottom: 20px; /* Spasi bawah */
+}
+
+/* Paragraf dalam jumbotron */
+.jumbotron p {
+    font-size: 18px; /* Ukuran font untuk paragraf */
+    margin-top: 10px; /* Spasi atas */
+    line-height: 1.6; /* Jarak antar baris */
+}
+
+/* Responsif untuk perangkat kecil */
+@media (max-width: 768px) {
+    .jumbotron h1 {
+        font-size: 28px; /* Ukuran font lebih kecil di perangkat kecil */
+    }
+
+    .jumbotron p {
+        font-size: 16px; /* Ukuran font lebih kecil untuk paragraf */
+    }
+}
+
+/* Informasi Pribadi */
+#about {
+    background: linear-gradient(135deg,  #0077b6, #8fc3dd,  #0077b6); /* Gradasi biru */
+    color: black; /* Warna teks hitam */
+    padding: 40px 20px; /* Padding atas dan bawah untuk ruang tambahan */
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2); /* Efek bayangan */
+    max-width: 3000px; /* Lebar maksimal untuk kotak */
+    position: relative; /* Agar posisi bisa diatur */
+    top: -50px; /* Mengangkat kotak ke atas */
+}
+
+.icon {
+    font-size: 60px; /* Ukuran ikon */
+    color: #005082; /* Warna ikon biru elegan */
+    margin-bottom: 20px; /* Spasi bawah */
+}
+
+h2 {
+    font-size: 35px; /* Ukuran font untuk judul */
+    color: black;
+    margin-bottom: 20px; /* Spasi bawah */
+    font-weight: bold; /* Menebalkan font */
+}
+
+p {
+    font-size: 18px; /* Ukuran font untuk paragraf */
+    margin: 10px 0; /* Margin atas dan bawah untuk paragraf */
+}
+.link {
+    color: #081f38; /* Warna biru standar (Bootstrap Primary Blue) */
+    text-decoration: none; /* Menghilangkan garis bawah */
+    font-weight: bold; /* Membuat teks lebih tebal */
+}
+
+.link:hover {
+    text-decoration: underline; /* Garis bawah saat hover */
+    color: #081f38; /* Warna biru lebih gelap saat hover */
+}
+
+.whatsapp .link {
+    color: #081f38; /* Warna hijau khas WhatsApp */
+    text-decoration: none; /* Menghilangkan garis bawah */
+    font-weight: bold; /* Membuat teks lebih tebal */
+}
+
+.whatsapp .link:hover {
+    text-decoration: underline; /* Garis bawah saat hover */
+    color: #021959; /* Warna lebih gelap saat hover */
+}
+.email, .github, .whatsapp {
+    margin-top: 10px; /* Spasi atas untuk email dan github */
+}
+.footer {
+    background-color: #005082; /* Warna footer biru berkelas */
+    color: #f4f4f4;
+    padding: 30px 0;
+    text-align: center;
+}
+.footer p {
+    margin: 0;
+}
+
+/* Profil Singkat Styles */
+#profile {
+    background: #0077b6; /* Warna biru yang cantik dan elegan */
+    color: black; /* Warna teks hitam */
+    padding: 40px 20px; /* Padding atas dan bawah untuk ruang tambahan */
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2); /* Efek bayangan */
+    max-width: 3000px; /* Lebar maksimal untuk kotak */
+    position: relative; /* Agar posisi bisa diatur */
+    top: -50px; /* Mengangkat kotak ke atas */
+}
+
+/* Styling untuk gambar PNG memanjang dan melebar */
+.icon1 {
+    width: 150px; /* Lebar yang lebih besar */
+    height: 200px; /* Tinggi yang lebih besar untuk membuat gambar memanjang */
+    margin-right: 100px; /* Memberikan jarak antara gambar dan teks */
+    object-fit: cover; /* Menutupi area secara proporsional */
+    align-self: center; /* Agar gambar selalu berada di tengah secara vertikal */
+    flex-shrink: 0; /* Agar gambar tidak mengecil jika ruang berkurang */
+    border-radius: 10px; /* Menambahkan sudut melengkung (opsional) */
+}
+h2 {
+    font-size: 28px; /* Ukuran font untuk judul */
+    color: black; /* Warna judul */
+    margin: 0 0 30px; /* Menambahkan margin bawah untuk memberikan jeda dengan teks lainnya */
+    font-weight: bold; /* Menebalkan font */
+    text-align: center; /* Memusatkan teks ke tengah */
+    
+}
+p {
+    font-size: 18px; /* Ukuran font untuk paragraf */
+    margin: 10px 0; /* Margin atas dan bawah untuk paragraf */
+}
+
+
+    </style>
+</head>
+<body>
+    <header>
+        <h1>
+            <img src="logosekolah.png" alt="Portfolio Icon" style="width: 50px; height: 50px; vertical-align: middle; margin-right: 10px;">
+            Portfolio PKL
+        </h1>
+        <nav>
+            <ul>
+                <li><a href="#home" onclick="scrollToSection(event, 'home')"><i class="fas fa-home icon"></i>Home</a></li>
+                <li><a href="#profile" onclick="scrollToSection(event, 'profile')"><i class="fas fa-user icon"></i>Profil</a></li>
+                <li><a href="#education" onclick="scrollToSection(event, 'education')"><i class="fas fa-graduation-cap icon"></i>Pendidikan</a></li>
+                <li><a href="#skills" onclick="scrollToSection(event, 'skills')"><i class="fas fa-tools icon"></i>Keahlian</a></li>
+                <li><a href="#projects" onclick="scrollToSection(event, 'projects')"><i class="fas fa-folder-open icon"></i>Proyek</a></li>
+                <li><a href="#goals" onclick="scrollToSection(event, 'goals')"><i class="fas fa-bullseye icon"></i>Tujuan PKL</a></li>
+                <li><a href="#experience" onclick="scrollToSection(event, 'experience')"><i class="fas fa-briefcase icon"></i>Pengalaman Organisasi</a></li>
+                <li><a href="#logout" onclick="scrollToSection(event, 'logout')"><i class="fas fa-sign-out-alt icon"></i>Logout</a></li>
+            </ul>
+        </nav>
+    </header>
+    
+
+    <main>
+        <section id="home">
+            <h2>Selamat datang di Portfolio PKL</h2>
+            <p>Ini adalah tempat untuk menunjukkan hasil kerja selama praktik kerja lapangan.</p>
+        </section>
+
+        <section id="profile">
+            <h2>Informasi Pribadi</h2>
+            <p>Nama: [Nama Anda]</p>
+            <p>Jurusan: [Jurusan Anda]</p>
+            <p>Kontak: [Email Anda]</p>
+        </section>
+
+        <section id="education">
+            <h2>Pendidikan</h2>
+            <p>[Deskripsi Pendidikan]</p>
+        </section>
+
+        <section id="skills">
+            <h2>Keahlian</h2>
+            <ul>
+                <li>HTML</li>
+                <li>CSS</li>
+                <li>JavaScript</li>
+                <li>[Keahlian lainnya]</li>
+            </ul>
+        </section>
+
+        <section id="projects">
+            <h2>Proyek</h2>
+            <p>[Deskripsi Proyek yang telah dilakukan]</p>
+        </section>
+
+        <section id="goals">
+            <h2>Tujuan PKL</h2>
+            <p>[Tujuan dari PKL]</p>
+        </section>
+
+        <section id="experience">
+            <h2>Pengalaman Organisasi</h2>
+            <p>[Deskripsi Pengalaman Organisasi]</p>
+        </section>
+
+        <section id="logout">
+            <h2>Logout</h2>
+            <button onclick="logout()">Keluar</button>
+        </section>
+    </main>
+
+    <footer>
+        <p>&copy; 2024 Portfolio PKL. All Rights Reserved.</p>
+    </footer>
+
+    <script>
+        function scrollToSection(event, sectionId) {
+            event.preventDefault(); // Mencegah perilaku default tautan
+            const section = document.getElementById(sectionId);
+            section.scrollIntoView({ behavior: 'smooth' }); // Gulir ke bagian dengan efek halus
+        }
+
+        function logout() {
+            alert("Anda telah berhasil logout!");
+            // Tambahkan logika logout sesuai kebutuhan Anda
+        }
+    </script>
+</body>
+</html>

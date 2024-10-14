@@ -1,0 +1,241 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Portfolio PKL</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Roboto', sans-serif;
+            background-color: #f0f0f0;
+        }
+
+        header {
+            background-color: #4CAF50;
+            color: white;
+            padding: 1rem;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .logo img {
+            width: 50px;
+        }
+
+        nav ul {
+            list-style: none;
+            display: flex;
+            gap: 1rem;
+        }
+
+        nav a {
+            color: white;
+            text-decoration: none;
+            font-weight: bold;
+        }
+
+        nav a:hover {
+            text-decoration: underline;
+        }
+
+        .section-content {
+            padding: 2rem;
+            text-align: center;
+        }
+
+        .intro h1 {
+            font-size: 2.5rem;
+            animation: fadeInDown 1s ease-in-out;
+        }
+
+        .intro p {
+            font-size: 1.2rem;
+            animation: fadeIn 1.5s ease-in-out;
+        }
+
+        img {
+            width: 100%;
+            max-width: 500px;
+            margin: 0 auto;
+            display: block;
+            animation: zoomIn 1.5s ease;
+        }
+
+        .project-gallery {
+            display: flex;
+            justify-content: center;
+            gap: 1rem;
+        }
+
+        .project-item {
+            background-color: white;
+            padding: 1rem;
+            border-radius: 10px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            animation: fadeInUp 1s ease;
+        }
+
+        .project-item img {
+            width: 100px;
+            height: 100px;
+            object-fit: cover;
+        }
+
+        .logout-btn {
+            padding: 1rem 2rem;
+            background-color: #f44336;
+            color: white;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            animation: bounce 1s infinite;
+        }
+
+        .logout-btn:hover {
+            background-color: #d32f2f;
+        }
+
+        footer {
+            background-color: #4CAF50;
+            color: white;
+            text-align: center;
+            padding: 1rem;
+            position: fixed;
+            bottom: 0;
+            width: 100%;
+        }
+
+        @keyframes fadeInDown {
+            from { opacity: 0; transform: translateY(-20px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+
+        @keyframes fadeIn {
+            from { opacity: 0; }
+            to { opacity: 1; }
+        }
+
+        @keyframes zoomIn {
+            from { transform: scale(0.9); opacity: 0; }
+            to { transform: scale(1); opacity: 1; }
+        }
+
+        @keyframes fadeInUp {
+            from { opacity: 0; transform: translateY(20px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+
+        @keyframes bounce {
+            0%, 20%, 50%, 80%, 100% { transform: translateY(0); }
+            40% { transform: translateY(-10px); }
+            60% { transform: translateY(-5px); }
+        }
+    </style>
+    <script>
+        function logout() {
+            alert("Anda telah berhasil logout.");
+            window.location.href = "logout.html"; // Ganti sesuai halaman logout-mu
+        }
+    </script>
+</head>
+<body>
+    <header>
+        <div class="logo">
+            <img src="logo.png" alt="Logo PKL">
+        </div>
+        <nav>
+            <ul>
+                <li><a href="#home">Home</a></li>
+                <li><a href="#personal-info">Informasi Pribadi</a></li>
+                <li><a href="#profile">Profil Singkat</a></li>
+                <li><a href="#education">Pendidikan</a></li>
+                <li><a href="#skills">Keahlian</a></li>
+                <li><a href="#projects">Project</a></li>
+                <li><a href="#goals">Tujuan PKL</a></li>
+                <li><a href="#experience">Pengalaman Organisasi</a></li>
+                <li><a href="#logout">Logout</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <section id="home">
+        <div class="intro">
+            <h1>Selamat Datang di Portfolio PKL</h1>
+            <p>Ini adalah halaman portfolio PKL dengan tampilan menarik dan animasi keren!</p>
+        </div>
+        <img src="home-image.png" alt="PKL Image">
+    </section>
+
+    <section id="personal-info" class="section-content">
+        <h2>Informasi Pribadi</h2>
+        <p>Nama: John Doe</p>
+        <p>Email: john.doe@example.com</p>
+        <p>No. HP: 08123456789</p>
+    </section>
+
+    <section id="profile" class="section-content">
+        <h2>Profil Singkat</h2>
+        <p>Seorang siswa yang berdedikasi tinggi dalam bidang pengembangan perangkat lunak dan desain web. Berpengalaman dalam menggunakan HTML, CSS, dan JavaScript.</p>
+    </section>
+
+    <section id="education" class="section-content">
+        <h2>Pendidikan</h2>
+        <ul>
+            <li>SMKN 1 Kota Bekasi, PPLG - 2024</li>
+            <li>Universitas Negeri Jakarta (UNJ), Informatika - Sedang Berjalan</li>
+        </ul>
+    </section>
+
+    <section id="skills" class="section-content">
+        <h2>Keahlian</h2>
+        <ul>
+            <li>HTML, CSS, JavaScript</li>
+            <li>PHP, MySQL</li>
+            <li>Desain UI/UX</li>
+        </ul>
+    </section>
+
+    <section id="projects" class="section-content">
+        <h2>Project</h2>
+        <div class="project-gallery">
+            <div class="project-item">
+                <img src="project1.png" alt="Project 1">
+                <p>Project 1: Desain Web</p>
+            </div>
+            <div class="project-item">
+                <img src="project2.png" alt="Project 2">
+                <p>Project 2: Aplikasi CRUD</p>
+            </div>
+        </div>
+    </section>
+
+    <section id="goals" class="section-content">
+        <h2>Tujuan PKL</h2>
+        <p>Menjadi bagian dari tim yang profesional dalam bidang pengembangan perangkat lunak, mengasah keterampilan teknis, dan mendapatkan pengalaman berharga di dunia kerja nyata.</p>
+    </section>
+
+    <section id="experience" class="section-content">
+        <h2>Pengalaman Organisasi</h2>
+        <ul>
+            <li>Ketua OSIS - SMKN 1 Kota Bekasi</li>
+            <li>Anggota Komunitas Developer Muda</li>
+        </ul>
+    </section>
+
+    <section id="logout" class="section-content">
+        <h2>Terima Kasih!</h2>
+        <button class="logout-btn" onclick="logout()">Logout</button>
+    </section>
+
+    <footer>
+        <p>&copy; 2024 - Portfolio PKL John Doe</p>
+    </footer>
+</body>
+</html>

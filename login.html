@@ -1,0 +1,177 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login Portfolio PKL</title>
+    <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+
+ <style>
+   body {
+    margin: 0;
+    font-family: 'Montserrat', sans-serif; /* Mengganti font menjadi Montserrat yang elegan dan modern */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    background: linear-gradient(135deg, #6dd5ed, #2193b0); /* Gradasi biru cantik dan elegan */
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+}
+
+.login-container {
+    background: linear-gradient(135deg, #6dd5ed, #ffab91); /* Gradasi dari biru ke peach */
+    padding: 50px;
+    border-radius: 20px;
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.3);
+    text-align: center;
+    width: 400px;
+    position: relative;
+    backdrop-filter: blur(10px); /* Efek blur pada latar belakang */
+    border: 12px solid #144a84; /* Warna luar yang mewah dan elegan */
+}
+
+.login-container img {
+    width: 120px; /* Ukuran gambar lebih besar */
+    height: 120px;
+    object-fit: cover;
+    border-radius: 50%;
+    margin-bottom: 20px;
+    border: 2px solid #2193b0; /* Border untuk ikon dengan warna biru elegan */
+}
+
+.login-container h1 {
+    margin-bottom: 15px;
+    color: #163f65; /* Warna teks formal */
+    font-size: 28px; /* Ukuran font lebih besar */
+    font-weight: bold;
+}
+
+.login-container h2 {
+    margin-bottom: 15px;
+    color: #163f65; /* Warna teks formal */
+    font-size: 28px; /* Ukuran font lebih besar */
+    font-weight: bold;
+}
+
+.login-container input[type="text"], .login-container input[type="password"] {
+    width: 100%;
+    padding: 12px;
+    margin: 10px 0;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    font-size: 16px;
+    transition: border-color 0.3s;
+}
+
+.login-container input[type="text"]:focus, .login-container input[type="password"]:focus {
+    border-color: #2193b0; /* Warna biru elegan untuk fokus */
+    box-shadow: 0 0 5px rgba(33, 147, 176, 0.5); /* Efek glow saat fokus */
+}
+
+.login-container button {
+    width: 100%;
+    padding: 12px;
+    background-color: #2193b0; /* Warna biru elegan */
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 16px;
+    transition: background-color 0.3s, transform 0.2s;
+}
+
+.login-container button:hover {
+    background-color: #1a729a; /* Warna lebih gelap saat hover */
+    transform: scale(1.05); /* Efek zoom saat hover */
+}
+
+.login-container p {
+    margin-top: 15px;
+    font-size: 14px;
+}
+
+.login-container a {
+    color: #2193b0; /* Warna link sesuai dengan tema */
+    text-decoration: none;
+    font-size: 14px;
+    transition: color 0.3s;
+}
+
+.login-container a:hover {
+    text-decoration: underline;
+    color: #1a729a; /* Warna link lebih gelap saat hover */
+}
+
+.modal-header {
+    background: linear-gradient(135deg, #a4d8e1, #6fb3e8); /* Gradasi biru soft dan biru muda */
+}
+
+.modal-body {
+    background: linear-gradient(135deg, #b2e0e8, #4da8e0); /* Gradasi biru lembut dan biru muda */
+}
+
+.modal-footer {
+    background: linear-gradient(135deg, #6fb3e8, #a4d8e1); /* Gradasi biru muda dan biru soft */
+}
+
+
+
+
+
+
+</style>    
+</head>
+<body>
+    <div class="login-container">
+        <img src="logosekolah.png" alt="Logo Restoran">
+        <h1>Login Portfolio</h1>
+        <h2>PKL</h2>
+        <form id="loginForm">
+            <input type="text" name="username" placeholder="Username" required>
+            <input type="password" name="password" placeholder="Password" required>
+            <button type="submit">Login</button>
+        </form>
+    </div>
+
+    <!-- Modal Login Success -->
+    <div class="modal fade" id="loginModal" tabindex="-1" aria-labelledby="loginModalLabel" aria-hidden="true">
+        <div class="modal-dialog modal-dialog-centered">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="loginModalLabel">Login Berhasil</h5>
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                        <span aria-hidden="true">&times;</span>
+                    </button>
+                </div>
+                <div class="modal-body">
+                    Selamat datang di portfolio saya! Di sini, Anda akan menemukan berbagai karya dan proyek yang telah saya selesaikan. Saya berharap presentasi ini dapat memberikan gambaran yang jelas tentang kemampuan dan potensi saya. Terima kasih atas perhatian Anda.
+                </div>
+                <div class="modal-footer">
+                    <a href="PKL.HTML" class="btn btn-secondary">Ke Dashboard</a>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Bootstrap JS and dependencies -->
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.2/dist/umd/popper.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+    <script>
+        document.getElementById('loginForm').addEventListener('submit', function(event) {
+            event.preventDefault();
+            // Show login success modal
+            $('#loginModal').modal('show');
+        });
+
+        document.getElementById('proceedButton').addEventListener('click', function() {
+            $('#loginModal').modal('hide');
+            window.location.href = 'tampilanutama.html'; // Redirect to the main page
+        });
+    </script>
+</body>
+</html>
